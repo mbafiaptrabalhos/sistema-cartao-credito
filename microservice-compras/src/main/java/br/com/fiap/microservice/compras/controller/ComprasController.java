@@ -1,8 +1,9 @@
 package br.com.fiap.microservice.compras.controller;
 
-import br.com.fiap.microservice.compras.model.Msg;
+import br.com.fiap.microservice.compras.dto.CompraDTO;
+import br.com.fiap.microservice.compras.model.Compra;
 import br.com.fiap.microservice.compras.producer.RabbitMqProducer;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +22,13 @@ public class ComprasController {
     }
 
     @PostMapping
-    public ResponseEntity<Msg> sendToMq(@RequestBody Msg compra) {
-        producer.sendMessage(compra);
-        return new ResponseEntity<Msg>(HttpStatus.OK);
+    public ResponseEntity<Compra> sendToMq(@RequestBody CompraDTO compraDTO) {
+        Compra compra = null;
+        try {
+            compra = producer.sendMessage(compraDTO);
+        } catch (JsonProcessingException e) {
+            return new ResponseEntity<Compra>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<Compra>(compra, HttpStatus.OK);
     }
 }
