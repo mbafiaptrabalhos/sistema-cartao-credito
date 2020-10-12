@@ -8,17 +8,15 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RabbitMqProducer {
+public class MqProducer {
 
     private final RabbitTemplate template;
 
-    public RabbitMqProducer(RabbitTemplate template) {
+    public MqProducer(RabbitTemplate template) {
         this.template = template;
     }
 
-    public Compra sendMessage(CompraDTO compraDTO) throws JsonProcessingException {
-        Compra compra = new Compra(compraDTO);
+    public void sendMessage(Compra compra) throws JsonProcessingException {
         template.convertAndSend(new ObjectMapper().writeValueAsString(compra));
-        return compra;
     }
 }
