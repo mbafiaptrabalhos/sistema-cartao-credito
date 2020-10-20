@@ -1,6 +1,5 @@
 package br.com.fiap.microservice.compras.producer;
 
-import br.com.fiap.microservice.compras.dto.CompraDTO;
 import br.com.fiap.microservice.compras.model.Compra;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
