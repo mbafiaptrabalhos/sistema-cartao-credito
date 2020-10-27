@@ -1,10 +1,10 @@
-package br.com.fiap.microservicealunos.microservicealunos;
+package br.com.fiap.apialunos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicroserviceAlunosApplicationTests {
+class ApiAlunosApplicationTests {
 
 	@Test
 	void contextLoads() {

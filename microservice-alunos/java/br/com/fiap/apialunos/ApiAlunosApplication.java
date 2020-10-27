@@ -1,13 +1,13 @@
-package br.com.fiap.microservicealunos.microservicealunos;
+package br.com.fiap.apialunos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicroserviceAlunosApplication {
+public class ApiAlunosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicroserviceAlunosApplication.class, args);
+		SpringApplication.run(ApiAlunosApplication.class, args);
 	}
 
 }
