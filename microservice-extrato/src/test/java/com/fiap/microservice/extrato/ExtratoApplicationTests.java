@@ -36,19 +36,19 @@ class ExtratoApplicationTests {
 	@Test
 	void case1() throws Exception {
 		
-//		String id = "1111"; 
-//		String email = "teste@teste.com";
-//		String rmAluno = "1111";
-//		String descricao = "teste";
-//		String data = "";
-//		BigDecimal valorCompra = null;
-//		
-//		ExtratoDTO extrato = new ExtratoDTO(id, email, rmAluno, descricao, data, valorCompra);
-//		
-//		mockMvc.perform(get("/extrato")
-//				.contentType("application/json")
-//				.content(objectMapper.writeValueAsString(extrato)))
-//				.andExpect(status().isOk());
+		String id = "1111";
+		String email = "mbafiap@hotmail.com";
+		String rmAluno = "1111";
+		String descricao = "teste";
+		String data = "";
+		BigDecimal valorCompra = BigDecimal.valueOf(100);
+
+		ExtratoDTO extrato = new ExtratoDTO(id, email, rmAluno, descricao, data, valorCompra);
+
+		mockMvc.perform(get("/extrato/1111/mbafiap@hotmail.com")
+				.contentType("application/json")
+				.content(""))
+				.andExpect(status().isOk());
 		
 	}
 
