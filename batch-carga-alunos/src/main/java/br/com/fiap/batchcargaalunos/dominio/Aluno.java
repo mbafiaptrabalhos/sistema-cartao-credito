@@ -1,8 +1,13 @@
 package br.com.fiap.batchcargaalunos.dominio;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Aluno {
 
     private String nome;
+    @Id
     private String rm;
 
     public String getNome() {
