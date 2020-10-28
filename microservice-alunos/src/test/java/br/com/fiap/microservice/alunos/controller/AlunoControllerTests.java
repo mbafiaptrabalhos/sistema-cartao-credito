@@ -18,7 +18,7 @@ public class AlunoControllerTests {
 
         AlunoCreateUpdateDTO aluno = new AlunoCreateUpdateDTO();
         aluno.setIdade(23);
-        aluno.setMatricula("123");
+        aluno.setRmAluno("123");
         aluno.setNome("Teste");
 
         controller.create(aluno);
@@ -52,7 +52,7 @@ public class AlunoControllerTests {
         AlunoController controller = new AlunoController(service);
         AlunoCreateUpdateDTO aluno = new AlunoCreateUpdateDTO();
         aluno.setIdade(23);
-        aluno.setMatricula("123");
+        aluno.setRmAluno("123");
         aluno.setNome("Teste");
         controller.update(aluno, "123");
         verify(service).update(aluno, "123");

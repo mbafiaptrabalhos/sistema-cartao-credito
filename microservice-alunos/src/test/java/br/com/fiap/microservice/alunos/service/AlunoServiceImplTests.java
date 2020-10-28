@@ -3,7 +3,6 @@ package br.com.fiap.microservice.alunos.service;
 import br.com.fiap.microservice.alunos.dto.AlunoCreateUpdateDTO;
 import br.com.fiap.microservice.alunos.model.Aluno;
 import br.com.fiap.microservice.alunos.repository.AlunoRepository;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class AlunoServiceImplTests {
 
         Aluno aluno = new Aluno();
         aluno.setNome("Teste");
-        aluno.setMatricula("123");
+        aluno.setRmAluno("123");
         aluno.setIdade(25);
 
         list.add(aluno);
@@ -44,7 +43,7 @@ public class AlunoServiceImplTests {
 
         Aluno aluno = new Aluno();
         aluno.setNome("Teste");
-        aluno.setMatricula("123");
+        aluno.setRmAluno("123");
         aluno.setIdade(25);
 
         list.add(aluno);
@@ -61,7 +60,7 @@ public class AlunoServiceImplTests {
         AlunoRepository repository = mock(AlunoRepository.class);
         AlunoCreateUpdateDTO aluno = new AlunoCreateUpdateDTO();
         aluno.setIdade(23);
-        aluno.setMatricula("123");
+        aluno.setRmAluno("123");
         aluno.setNome("Teste");
 
         AlunoService alunoService = new AlunoServiceImpl(repository);
@@ -74,7 +73,7 @@ public class AlunoServiceImplTests {
         AlunoRepository repository = mock(AlunoRepository.class);
         AlunoCreateUpdateDTO alunoCreateUpdateDTO = new AlunoCreateUpdateDTO();
         alunoCreateUpdateDTO.setIdade(23);
-        alunoCreateUpdateDTO.setMatricula("123");
+        alunoCreateUpdateDTO.setRmAluno("123");
         alunoCreateUpdateDTO.setNome("Teste");
 
         Aluno aluno = new Aluno(alunoCreateUpdateDTO);
@@ -90,7 +89,7 @@ public class AlunoServiceImplTests {
         AlunoRepository repository = mock(AlunoRepository.class);
         AlunoCreateUpdateDTO alunoCreateUpdateDTO = new AlunoCreateUpdateDTO();
         alunoCreateUpdateDTO.setIdade(23);
-        alunoCreateUpdateDTO.setMatricula("123");
+        alunoCreateUpdateDTO.setRmAluno("123");
         alunoCreateUpdateDTO.setNome("Teste");
 
         Aluno aluno = new Aluno(alunoCreateUpdateDTO);

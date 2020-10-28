@@ -8,32 +8,31 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Aluno {
 	
 	@Id
-    private String matricula;
+    private String rmAluno;
     private String nome;
-    private int idade;
+    private String email;
     private boolean ativo;
  
     public Aluno() {}
 
 	public Aluno(AlunoCreateUpdateDTO alunoCreateUpdateDTO) {
-		this.matricula = alunoCreateUpdateDTO.getMatricula();
+		this.rmAluno = alunoCreateUpdateDTO.getRmAluno();
 		this.nome = alunoCreateUpdateDTO.getNome();
-		this.idade = alunoCreateUpdateDTO.getIdade();
 		this.ativo = true;
     }
 
 
 	@Override
     public String toString() {
-    	return "\nNome: " + nome + " - idade: " + idade;
+    	return "\nNome: " + nome + " - email: " + email;
     }
 
-	public String getMatricula() {
-		return matricula;
+	public String getRmAluno() {
+		return rmAluno;
 	}
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setRmAluno(String rmAluno) {
+		this.rmAluno = rmAluno;
 	}
 
 	public String getNome() {
@@ -44,19 +43,19 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
 	public boolean isAtivo() {
 		return ativo;
 	}
 
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

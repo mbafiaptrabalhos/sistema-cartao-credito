@@ -38,7 +38,7 @@ public class AlunoServiceImpl implements AlunoService {
     public Aluno update(AlunoCreateUpdateDTO alunoUpdate, String id) {
         Aluno aluno = getAlunoById(id);
         aluno.setIdade(alunoUpdate.getIdade());
-        aluno.setMatricula(alunoUpdate.getMatricula());
+        aluno.setRmAluno(alunoUpdate.getRmAluno());
         aluno.setNome(alunoUpdate.getNome());
 
         Aluno savedAluno = alunoRepository.save(aluno);

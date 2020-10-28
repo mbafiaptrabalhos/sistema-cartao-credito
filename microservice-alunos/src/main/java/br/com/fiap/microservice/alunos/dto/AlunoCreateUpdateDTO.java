@@ -1,24 +1,15 @@
 package br.com.fiap.microservice.alunos.dto;
 
-import br.com.fiap.microservice.alunos.model.Aluno;
-
 public class AlunoCreateUpdateDTO {
 
-    private String matricula;
+    private String rmAluno;
     private String nome;
-    private int idade;
+    private String email;
 
     public AlunoCreateUpdateDTO() {
     }
 
 
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
 
     public String getNome() {
         return nome;
@@ -28,11 +19,19 @@ public class AlunoCreateUpdateDTO {
         this.nome = nome;
     }
 
-    public String getMatricula() {
-        return matricula;
+    public String getRmAluno() {
+        return rmAluno;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public void setRmAluno(String rmAluno) {
+        this.rmAluno = rmAluno;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
