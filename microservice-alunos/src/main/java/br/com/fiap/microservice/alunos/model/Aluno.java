@@ -10,7 +10,6 @@ public class Aluno {
 	@Id
     private String rmAluno;
     private String nome;
-    private String email;
     private boolean ativo;
  
     public Aluno() {}
@@ -24,7 +23,7 @@ public class Aluno {
 
 	@Override
     public String toString() {
-    	return "\nNome: " + nome + " - email: " + email;
+    	return "rmAluno: " + rmAluno + "\nNome: " + nome;
     }
 
 	public String getRmAluno() {
@@ -51,11 +50,4 @@ public class Aluno {
 		this.ativo = ativo;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 }
