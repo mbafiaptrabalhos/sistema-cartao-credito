@@ -34,8 +34,8 @@ public class ExtratoController {
 	@Autowired
 	public AlunoService alunoService;
 
-	@GetMapping("/{rmAluno}")
-    public ResponseEntity<Compra> extrato (@PathVariable("rmAluno") String rmAluno) {
+	@GetMapping("/{rmAluno}/{email}")
+    public ResponseEntity<Compra> extrato (@PathVariable("rmAluno") String rmAluno, @PathVariable("email") String email) {
 		
 		Compra extrato = new Compra();
 		
@@ -48,7 +48,7 @@ public class ExtratoController {
 			
 			Aluno dadosAluno = alunoService.findByRmAluno(rmAluno);
 			
-			emailService.sendSimpleMessage(dadosAluno.getEmail(), "Extrato", extratoAluno);
+			emailService.sendSimpleMessage(email, "Extrato", extratoAluno);
 			
         } catch (Exception e) {
             return new ResponseEntity<Compra>(HttpStatus.BAD_REQUEST);
